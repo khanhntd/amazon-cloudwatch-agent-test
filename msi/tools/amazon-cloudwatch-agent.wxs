@@ -155,7 +155,7 @@
     <SetProperty Id="QtExecUpdateConfigPermission" 
         Sequence="execute"
         Before ="QtExecUpdateConfigPermission"
-        Value='&quot;[POWERSHELLEXE]&quot;  -ExecutionPolicy Bypass -File "[INSTALLDIR]permission.ps1" ' 
+        Value='&quot;[POWERSHELLEXE]&quot;  -ExecutionPolicy Bypass -InputFormat None -NonInteractive -File "[INSTALLDIR]permission.ps1" ' 
     />
     <!-- Setup a silent execution contrainer around the command -->
     <CustomAction Id="QtExecUpdateConfigPermission" 
