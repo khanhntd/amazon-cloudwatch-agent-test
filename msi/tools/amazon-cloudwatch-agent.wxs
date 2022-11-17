@@ -152,21 +152,21 @@
         </Component>
     </DirectoryRef>
      <!-- Find and use powershell to run the command, because just running "powershell.exe" did not resolve (not in ENV path) when using "WixQuietExec".-->
-    <SetProperty Id="QtExecUpdateConfigPermission" 
+    <SetProperty Id="QtExecUpdatePermission" 
         Sequence="execute"
-        Before ="QtExecUpdateConfigPermission"
+        Before ="QtExecUpdatePermission"
         Value='&quot;[POWERSHELLEXE]&quot;  -ExecutionPolicy Bypass -InputFormat None -NonInteractive -File "[INSTALLDIR]permission.ps1" ' 
     />
     <!-- Setup a silent execution contrainer around the command -->
-    <CustomAction Id="QtExecUpdateConfigPermission" 
+    <CustomAction Id="QtExecUpdatePermission" 
     BinaryKey="WixCA" 
-    DllEntry="WixQuietExec64" 
+    DllEntry="CAQuietExec" 
     Execute="deferred" 
     Return="check" 
     Impersonate="no" />
 
     <InstallExecuteSequence>
-    <Custom Action="QtExecUpdateConfigPermission" After="InstallFiles">NOT UPGRADINGPRODUCTCODE AND NOT (REMOVE~="ALL")</Custom>
+    <Custom Action="QtExecUpdatePermission" After="InstallFiles">NOT UPGRADINGPRODUCTCODE AND NOT (REMOVE~="ALL")</Custom>
     </InstallExecuteSequence>
 
     <MajorUpgrade AllowDowngrades="yes"/>
