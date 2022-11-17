@@ -160,7 +160,7 @@
     <!-- Setup a silent execution contrainer around the command -->
     <CustomAction Id="QtExecUpdateConfigPermission" 
     BinaryKey="WixCA" 
-    DllEntry="WixQuietExec" 
+    DllEntry="WixQuietExec64" 
     Execute="deferred" 
     Return="check" 
     Impersonate="no" />
