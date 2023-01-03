@@ -56,7 +56,7 @@ To be more specifically,
 
 ## Run tests in your AWS account
 ````
-cd integration/terraform/ecs && terraform init && terraform apply -auto-approve \
+cd /terraform/ecs/linux && terraform init && terraform apply -auto-approve \
     -var="test_dir={{your test case folder name}} \
 ````
 

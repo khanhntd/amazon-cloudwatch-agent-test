@@ -45,5 +45,5 @@ variable "s3_bucket" {
 
 variable "test_dir" {
   type    = string
-  default = "./integration/test/nvidia_gpu"
+  default = "./test/nvidia_gpu"
 }

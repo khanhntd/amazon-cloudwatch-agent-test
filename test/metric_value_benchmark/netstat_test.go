@@ -1,17 +1,18 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT
 
-//go:build linux && integration
-// +build linux,integration
+//go:build !windows
+// +build !windows
 
 package metric_value_benchmark
 
 import (
+	"log"
+
 	"github.com/aws/amazon-cloudwatch-agent-test/test/metric"
 	"github.com/aws/amazon-cloudwatch-agent-test/test/metric/dimension"
 	"github.com/aws/amazon-cloudwatch-agent-test/test/status"
 	"github.com/aws/amazon-cloudwatch-agent-test/test/test_runner"
-	"log"
 )
 
 type NetStatTestRunner struct {

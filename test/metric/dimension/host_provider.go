@@ -1,16 +1,17 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT
 
-//go:build linux && integration
-// +build linux,integration
+//go:build !windows
+// +build !windows
 
 package dimension
 
 import (
+	"os"
+
 	"github.com/aws/amazon-cloudwatch-agent-test/environment/computetype"
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/service/cloudwatch/types"
-	"os"
 )
 
 type HostDimensionProvider struct {

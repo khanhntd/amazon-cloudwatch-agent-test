@@ -312,7 +312,7 @@ Install `terraform` on your local machine ([download](https://www.terraform.io/d
 Navigate to the localstack terraform directory, initialize Terraform and apply the tf plan:
 
 ```shell
-cd ./integration/terraform/ec2/localstack
+cd ./terraform/ec2/localstack
 terraform init
 terraform apply --auto-approve \
          -var="github_test_repo=${gh repo you want to use ex https://github.com/aws/amazon-cloudwatch-agent-test.git}" \
@@ -348,7 +348,7 @@ In this example, you should keep track of `ec2-35-87-254-148.us-west-2.compute.a
 ### Start the linux integration tests (example):
 
 ```shell
-cd ../linux # assuming you are still in the ./integration/terraform/ec2/localstack directory
+cd ../linux # assuming you are still in the ./terraform/ec2/localstack directory
 terraform init
 terraform apply --auto-approve \
          -var="github_test_repo=${gh repo you want to use ex https://github.com/aws/amazon-cloudwatch-agent-test.git}" \
@@ -379,16 +379,16 @@ aws_instance.integration-test (remote-exec):     --- PASS: TestBundle/resource_f
 aws_instance.integration-test (remote-exec):     --- PASS: TestBundle/resource_file_location_resources/integration/ssl/with/original/bundle_find_target_true (61.06s)
 aws_instance.integration-test (remote-exec):     --- PASS: TestBundle/resource_file_location_resources/integration/ssl/without/bundle_find_target_true (61.13s)
 aws_instance.integration-test (remote-exec): PASS
-aws_instance.integration-test (remote-exec): ok  	github.com/aws/amazon-cloudwatch-agent/integration/test/ca_bundle	243.288s
+aws_instance.integration-test (remote-exec): ok  	github.com/aws/amazon-cloudwatch-agent-test/test/ca_bundle	243.288s
 aws_instance.integration-test (remote-exec): === RUN   TestEmpty
 aws_instance.integration-test (remote-exec): --- PASS: TestEmpty (0.00s)
 aws_instance.integration-test (remote-exec): PASS
-aws_instance.integration-test (remote-exec): ok  	github.com/aws/amazon-cloudwatch-agent/integration/test/empty	0.002s
+aws_instance.integration-test (remote-exec): ok  	github.com/aws/amazon-cloudwatch-agent-test/test/empty	0.002s
 aws_instance.integration-test (remote-exec): === RUN   TestAgentStatus
 aws_instance.integration-test: Still creating... [5m30s elapsed]
 aws_instance.integration-test (remote-exec): --- PASS: TestAgentStatus (6.54s)
 aws_instance.integration-test (remote-exec): PASS
-aws_instance.integration-test (remote-exec): ok  	github.com/aws/amazon-cloudwatch-agent/integration/test/sanity	6.541s
+aws_instance.integration-test (remote-exec): ok  	github.com/aws/amazon-cloudwatch-agent-test/test/sanity	6.541s
 aws_instance.integration-test: Creation complete after 5m35s [id=i-0f7f77a62c93df010]
 
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.   
@@ -396,7 +396,7 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 
 ### Start the Windows integration tests (example): 
 ```shell
-cd ../linux # assuming you are still in the ./integration/terraform/ec2/localstack directory
+cd ../linux # assuming you are still in the ./terraform/ec2/localstack directory
 terraform init
 terraform apply --auto-approve \
          -var="github_repo=${GH repo you want to use. Default: https://github.com/aws/amazon-cloudwatch-agent.git}" \
@@ -430,7 +430,7 @@ null_resource.integration_test: Still creating... [2m40s elapsed]
 null_resource.integration_test: Still creating... [2m50s elapsed]
 null_resource.integration_test (remote-exec): --- PASS: TestAgentStatus (44.84s)
 null_resource.integration_test (remote-exec): PASS
-null_resource.integration_test (remote-exec): ok        github.com/aws/amazon-cloudwatch-agent/integration/test/sanity  45.203s
+null_resource.integration_test (remote-exec): ok        github.com/aws/amazon-cloudwatch-agent-test/test/sanity  45.203s
 null_resource.integration_test: Creation complete after 2m52s [id=8591283884920986776]
 ```
 

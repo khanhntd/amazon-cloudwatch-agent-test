@@ -1,21 +1,23 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT
 
-//go:build linux && integration
-// +build linux,integration
+//go:build !windows
+// +build !windows
 
 package metric_append_dimension
 
 import (
 	"fmt"
+
 	"github.com/aws/amazon-cloudwatch-agent-test/environment"
-	"github.com/aws/amazon-cloudwatch-agent-test/test/status"
 	"github.com/aws/amazon-cloudwatch-agent-test/test/metric/dimension"
+	"github.com/aws/amazon-cloudwatch-agent-test/test/status"
+
+	"log"
+	"testing"
 
 	"github.com/aws/amazon-cloudwatch-agent-test/test/test_runner"
 	"github.com/stretchr/testify/suite"
-	"log"
-	"testing"
 )
 
 type MetricsAppendDimensionTestSuite struct {

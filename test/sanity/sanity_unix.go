@@ -1,8 +1,8 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT
 
-//go:build linux || freebsd || netbsd || openbsd
-// +build linux freebsd netbsd openbsd
+//go:build !windows
+// +build !windows
 
 package sanity
 

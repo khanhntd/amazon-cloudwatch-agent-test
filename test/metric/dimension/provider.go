@@ -1,15 +1,16 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT
 
-//go:build linux && integration
-// +build linux,integration
+//go:build !windows
+// +build !windows
 
 package dimension
 
 import (
+	"log"
+
 	"github.com/aws/amazon-cloudwatch-agent-test/environment"
 	"github.com/aws/aws-sdk-go-v2/service/cloudwatch/types"
-	"log"
 )
 
 type ExpectedDimensionValue struct {
