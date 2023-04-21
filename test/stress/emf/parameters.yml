@@ -1,5 +1,5 @@
 # Receivers that agent needs to tests
-receivers: "emf"
+receivers: ["emf"]
 
 #Test case name
 test_case: "emf_stress"

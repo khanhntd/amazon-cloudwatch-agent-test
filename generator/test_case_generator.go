@@ -34,7 +34,6 @@ var testTypeToTestDirMap = map[string][]string{
 		"./test/nvidia_gpu",
 	},
 	"ec2_linux": {
-		"./test/ca_bundle",
 		"./test/cloudwatchlogs",
 		"./test/metrics_number_dimension",
 		"./test/metric_value_benchmark",

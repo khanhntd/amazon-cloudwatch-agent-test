@@ -15,15 +15,10 @@ variable "ssh_key_name" {
 
 variable "ami" {
   type    = string
-  default = "cloudwatch-agent-integration-test-ubuntu*"
+  default = "cloudwatch-agent-integration-test-al2*"
 }
 
 variable "ssh_key_value" {
-  type    = string
-  default = ""
-}
-
-variable "user" {
   type    = string
   default = ""
 }
@@ -35,7 +30,7 @@ variable "arc" {
 
 variable "s3_bucket" {
   type    = string
-  default = ""
+  default = "integration-test-cwagent"
 }
 
 variable "test_dir" {
@@ -45,7 +40,7 @@ variable "test_dir" {
 
 variable "cwa_github_sha" {
   type    = string
-  default = ""
+  default = "0086f4cce10fa27f5604602778bf17b113c7bdf1"
 }
 
 variable "cwa_github_sha_date" {
@@ -55,4 +50,14 @@ variable "cwa_github_sha_date" {
 variable "values_per_minute" {
   type    = number
   default = 10
+}
+
+variable "family" {
+  type    = string
+  default = "linux"
+
+  validation {
+    condition     = contains(["windows", "mac", "linux"], var.family)
+    error_message = "Valid values for family are (windows, mac, linux)."
+  }
 }
