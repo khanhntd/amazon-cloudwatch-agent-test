@@ -46,6 +46,8 @@ module "validator" {
   test_dir       = var.test_dir
   temp_directory = "/tmp"
   cwa_github_sha = var.cwa_github_sha
+
+  instance_id = aws_instance.cwagent.id
 }
 
 // Build and uploading the validator to spending less time in 

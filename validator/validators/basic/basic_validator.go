@@ -54,19 +54,13 @@ func (s *BasicValidator) GenerateLoad() error {
 func (s *BasicValidator) CheckData(startTime, endTime time.Time) error {
 	var (
 		multiErr         error
-		ec2InstanceId    = awsservice.GetInstanceId()
 		metricNamespace  = s.vConfig.GetMetricNamespace()
 		validationMetric = s.vConfig.GetMetricValidation()
 		validationLog    = s.vConfig.GetLogValidation()
 	)
 
 	for _, metric := range validationMetric {
-		metricDimensions := []types.Dimension{
-			{
-				Name:  aws.String("InstanceId"),
-				Value: aws.String(ec2InstanceId),
-			},
-		}
+		var metricDimensions []types.Dimension
 		for _, dimension := range metric.MetricDimension {
 			metricDimensions = append(metricDimensions, types.Dimension{
 				Name:  aws.String(dimension.Name),
